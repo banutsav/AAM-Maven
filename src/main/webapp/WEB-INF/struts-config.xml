@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="LoginForm" type="edu.uga.ovpr.aam.login.LoginForm"/>
+        <form-bean name="AffiliateOptionForm" type="edu.uga.ovpr.aam.application.AffiliateOptionForm"/>
+        <form-bean name="AffiliateApplicationForm" type="edu.uga.ovpr.aam.application.AffiliateApplicationForm">
+            <form-property name="provider" type="java.lang.String" initial="OVPR"/> 
+        </form-bean>
+        <form-bean name="UpgradeProvisionalAffiliateForm" type="edu.uga.ovpr.aam.application.UpgradeProvisionalAffiliateForm"/>
+        <form-bean name="AffiliateWithDefinedEmailForm" type="edu.uga.ovpr.aam.application.AffiliateWithDefinedEmailForm"/>
+        
+        
+        <form-bean name="ManageUsersForm" type="edu.uga.ovpr.aam.users.ManageUsersForm"/>
+        <form-bean name="ManAffReqForm" type="edu.uga.ovpr.aam.request.ManAffReqForm"/>
+        <form-bean name="NewAffReqForm" type="edu.uga.ovpr.aam.request.NewAffReqForm"/>
+        <form-bean name="ManPurposeForm" type="edu.uga.ovpr.aam.purpose.ManPurposeForm"/>
+        <form-bean name="PurposeDataForm" type="edu.uga.ovpr.aam.purpose.PurposeDataForm"/>
+        <form-bean name="NewPurposeForm" type="edu.uga.ovpr.aam.purpose.NewPurposeForm"/>
+        <form-bean name="ReqNewPurposeForm" type="edu.uga.ovpr.aam.purpose.ReqNewPurposeForm"/>
+        <form-bean name="UpdatePurposeForm" type="edu.uga.ovpr.aam.purpose.UpdatePurposeForm"/>
+        <form-bean name="ManCreateNewAffForm" type="edu.uga.ovpr.aam.manager.ManCreateNewAffForm"/>
+        
+        <form-bean name="ViewManCurrAffForm" type="edu.uga.ovpr.aam.manager.ViewManCurrAffForm"/>
+        
+        <form-bean name="ViewManCurrAssociateForm" type="edu.uga.ovpr.aam.manager.ViewManCurrAssociateForm"/>
+        
+        <form-bean name="DefineProxyManagerForm" type="edu.uga.ovpr.aam.manager.DefineProxyManagerForm"/>
+        <form-bean name="AddAffManagerForm" type="edu.uga.ovpr.aam.manager.AddAffManagerForm"/>
+        
+        <form-bean name="ManAffForm" type="edu.uga.ovpr.aam.manager.ManAffForm"/>
+        
+        <form-bean name="ManAssociateForm" type="edu.uga.ovpr.aam.manager.ManAssociateForm"/>
+        
+        <form-bean name="ManAffManagerForm" type="edu.uga.ovpr.aam.manager.ManAffManagerForm"/>
+        <form-bean name="FindAffForm" type="edu.uga.ovpr.aam.manager.FindAffForm"/>
+        <form-bean name="FindAssocForm" type="edu.uga.ovpr.aam.manager.FindAssocForm"/>
+        <form-bean name="NewAffReqFindForm" type="edu.uga.ovpr.aam.request.NewAffReqFindForm"/>
+        <form-bean name="AddAffPurposeReqForm" type="edu.uga.ovpr.aam.request.AddAffPurposeReqForm"/>
+        <form-bean name="GenFindAffForm" type="edu.uga.ovpr.aam.request.GenFindAffForm"/>
+
+        <form-bean name="ControlAffiliatesForm" type="edu.uga.ovpr.aam.superuser.ControlAffiliatesForm"/>
+        
+        <form-bean name="ControlAssociatesForm" type="edu.uga.ovpr.aam.superuser.ControlAssociatesForm">
+        </form-bean>
+        
+        <!-- contacts -->
+        <form-bean name="CreateContactsForm" type="edu.uga.ovpr.aam.contacts.CreateContactsForm"/>
+        <form-bean name="NewContactForm" type="edu.uga.ovpr.aam.contacts.NewContactForm"/>
+        <form-bean name="ManageContactsForm" type="edu.uga.ovpr.aam.contacts.ManageContactsForm"/>
+        <form-bean name="EditContactForm" type="edu.uga.ovpr.aam.contacts.EditContactForm"/>
+        
+        <form-bean name="ControlAffActiveForm" type="edu.uga.ovpr.aam.superuser.ControlAffActiveForm"/>
+        
+        <form-bean name="ControlAssociateActiveForm" type="edu.uga.ovpr.aam.superuser.ControlAssociateActiveForm"/>
+        
+        
+        <form-bean name="ControlManagersForm" type="edu.uga.ovpr.aam.superuser.ControlManagersForm"/>
+        
+        <form-bean name="ControlAssociateManagersForm" type="edu.uga.ovpr.aam.superuser.ControlAssociateManagersForm"/>
+        
+        <form-bean name="ControlContactManagersForm" type="edu.uga.ovpr.aam.contacts.ControlContactManagersForm"/>
+        
+        <form-bean name="ControlManActiveForm" type="edu.uga.ovpr.aam.superuser.ControlManActiveForm"/>
+        
+        <form-bean name="ControlAssociateManActiveForm" type="edu.uga.ovpr.aam.superuser.ControlAssociateManActiveForm"/>
+        
+        <form-bean name="ControlContactManagerActiveForm" type="edu.uga.ovpr.aam.contacts.ControlContactManagerActiveForm"/>
+        
+        <form-bean name="ControlNewManForm" type="edu.uga.ovpr.aam.superuser.ControlNewManForm"/>
+        
+        <form-bean name="ControlNewAssociateManForm" type="edu.uga.ovpr.aam.superuser.ControlNewAssociateManForm"/>
+        
+        <form-bean name="ControlNewContactManagerForm" type="edu.uga.ovpr.aam.contacts.ControlNewContactManagerForm"/>
+        
+        <form-bean name="ControlManAddProxyForm" type="edu.uga.ovpr.aam.superuser.ControlManAddProxyForm"/>
+        <form-bean name="ControlPurposesForm" type="edu.uga.ovpr.aam.superuser.ControlPurposesForm"/>
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="gfwd_login" path="/" redirect="true"/>
+        <forward name="errorPage" path="/WEB-INF/jsp/Error/Error.jsp"/>
+        <forward name="loginPage" path="/WEB-INF/jsp/Login/Login.jsp"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/Login" type="edu.uga.ovpr.aam.login.LoginAction" name="LoginForm" scope="request"/>
+        <action path="/Logout" type="edu.uga.ovpr.aam.login.LogoutAction"/>
+        <action path="/ExtendSession" type="edu.uga.ovpr.aam.login.ExtendSessionAction">
+            <forward name="fwd_blank" path="/WEB-INF/html/blank.html"/>
+        </action>
+        
+        <action path="/Get" type="edu.uga.ovpr.aam.GetAction"/>
+        
+        <action path="/ToAffiliateApplication"  type="edu.uga.ovpr.aam.application.entry.ToAffiliateApplication"/>
+        
+        <action path="/ToAffiliateMainMenu" type="edu.uga.ovpr.aam.application.entry.ToAffiliateMainMenu"/>
+        
+        <action path="/ToUpgradeProvisionalAffiliate" type="edu.uga.ovpr.aam.application.entry.ToUpgradeProvisionalAffiliate"/>
+        
+        <action path="/AffiliateOption" type="edu.uga.ovpr.aam.application.entry.ToAffiliateOption"
+        name="AffiliateOptionForm" input="/WEB-INF/jsp/Affiliate/AffiliateOption.jsp"/>
+        
+        <action path="/AffiliateFormWithDefinedEmailAction" type="edu.uga.ovpr.aam.application.entry.AffiliateFormWithDefinedEmailAction"
+        name="AffiliateWithDefinedEmailForm" input="/WEB-INF/jsp/Affiliate/AffiliateManagerStartPage.jsp"/>
+        
+        <action path="/SubmitNonProvisionalAffiliate" type="edu.uga.ovpr.aam.application.entry.SubmitNonProvisionalAffiliate"
+        name="AffiliateApplicationForm" input="/WEB-INF/jsp/Affiliate/AddNonProvisionalAffiliate.jsp"/>
+  
+        <action path="/SubmitProvisionalAffiliate" type="edu.uga.ovpr.aam.application.entry.SubmitProvisionalAffiliate"
+        name="AffiliateApplicationForm" input="/WEB-INF/jsp/Affiliate/AddProvisionalAffiliate.jsp"/>
+        
+        <action path="/UpgradeProvisionalAffiliate" type="edu.uga.ovpr.aam.application.entry.UpgradeProvisionalAffiliate"
+        name="UpgradeProvisionalAffiliateForm" input="/WEB-INF/jsp/Affiliate/UpgradeProvisionalAffiliate.jsp"/>
+        
+        
+        
+        <action path="/ManageUsers" type="edu.uga.ovpr.aam.users.ManageUsersAction"
+        name="ManageUsersForm" input="/WEB-INF/jsp/Manager/ManageUsers.jsp"/>
+        
+        <action path="/ManAffReq" type="edu.uga.ovpr.aam.request.ManAffReqAction"
+        name="ManAffReqForm" input="/WEB-INF/jsp/Manager/ManAffReq.jsp"/>
+
+        <action path="/NewAffReq" type="edu.uga.ovpr.aam.request.NewAffReqAction"
+        name="NewAffReqForm" input="/WEB-INF/jsp/Affiliate/NewAffReq.jsp"/>
+
+        <action path="/ViewManCurrAff" type="edu.uga.ovpr.aam.manager.ViewManCurrAffAction"
+        name="ViewManCurrAffForm" input="/WEB-INF/jsp/Manager/ViewManCurrAff.jsp"/>
+
+        <action path="/ViewManCurrAssociate" type="edu.uga.ovpr.aam.manager.ViewManCurrAssociateAction"
+        name="ViewManCurrAssociateForm" input="/WEB-INF/jsp/Manager/ViewManCurrAssociate.jsp"/>
+                
+        <action path="/ManCreateNewAff" type="edu.uga.ovpr.aam.manager.ManCreateNewAffAction"
+        name="ManCreateNewAffForm" input="/WEB-INF/jsp/Manager/ManCreateNewAff.jsp"/>
+        
+        <action path="/ManPurpose" type="edu.uga.ovpr.aam.purpose.ManPurposeAction"
+        name="ManPurposeForm" input="/WEB-INF/jsp/Manager/ManPurpose.jsp"/>
+        
+        <action path="/PurposeData" type="edu.uga.ovpr.aam.purpose.PurposeDataAction"
+        name="PurposeDataForm" input="/WEB-INF/jsp/Manager/PurposeData.jsp"/>
+        
+        <action path="/NewPurpose" type="edu.uga.ovpr.aam.purpose.NewPurposeAction"
+        name="NewPurposeForm" input="/WEB-INF/jsp/Manager/NewPurpose.jsp"/>
+        
+        <action path="/ReqNewPurpose" type="edu.uga.ovpr.aam.purpose.ReqNewPurposeAction"
+        name="ReqNewPurposeForm" input="/WEB-INF/jsp/Manager/ReqNewPurpose.jsp"/>
+        
+        <action path="/UpdatePurpose" type="edu.uga.ovpr.aam.purpose.UpdatePurposeAction"
+        name="UpdatePurposeForm" input="/WEB-INF/jsp/Manager/UpdatePurpose.jsp"/>
+        
+        <action path="/DefineProxyManager" type="edu.uga.ovpr.aam.manager.DefineProxyManagerAction"
+        name="DefineProxyManagerForm" input="/WEB-INF/jsp/Manager/DefineProxyManager.jsp"/>
+        
+        <action path="/AddAffManager" type="edu.uga.ovpr.aam.manager.AddAffManagerAction"
+        name="AddAffManagerForm" input="/WEB-INF/jsp/Manager/AddAffManager.jsp"/>
+        
+        <action path="/ManAff" type="edu.uga.ovpr.aam.manager.ManAffAction"
+        name="ManAffForm" input="/WEB-INF/jsp/Manager/ManAff.jsp"/>
+        
+        <action path="/ManAssociate" type="edu.uga.ovpr.aam.manager.ManAssociateAction"
+        name="ManAssociateForm" input="/WEB-INF/jsp/Manager/ManAssociate.jsp"/>
+        
+        
+        <action path="/ManAffManager" type="edu.uga.ovpr.aam.manager.ManAffManagerAction"
+        name="ManAffManagerForm" input="/WEB-INF/jsp/Manager/ManAffManager.jsp"/>
+        
+        <action path="/FindAff" type="edu.uga.ovpr.aam.manager.FindAffAction"
+        name="FindAffForm" input="/WEB-INF/jsp/Manager/FindAff.jsp"/>
+        
+        <action path="/FindAssoc" type="edu.uga.ovpr.aam.manager.FindAssocAction"
+        name="FindAssocForm" input="/WEB-INF/jsp/Manager/FindAssoc.jsp"/>
+        
+        <action path="/NewAffReqFind" type="edu.uga.ovpr.aam.request.NewAffReqFindAction"
+        name="NewAffReqFindForm" input="/WEB-INF/jsp/Affiliate/NewAffReqFind.jsp"/>
+        
+        <action path="/AddAffPurposeReq" type="edu.uga.ovpr.aam.request.AddAffPurposeReqAction"
+        name="AddAffPurposeReqForm" input="/WEB-INF/jsp/Affiliate/AddAffPurposeReq.jsp"/>
+        
+        <action path="/GenFindAff" type="edu.uga.ovpr.aam.request.GenFindAffAction"
+        name="GenFindAffForm" input="/WEB-INF/jsp/Affiliate/GenFindAff.jsp"/>
+        
+
+        
+        <action path="/ControlAffiliates" type="edu.uga.ovpr.aam.superuser.ControlAffiliatesAction"
+        name="ControlAffiliatesForm" input="/WEB-INF/jsp/Superuser/ControlAffiliates.jsp"/>
+        
+        
+        <action path="/ControlAssociates" type="edu.uga.ovpr.aam.superuser.ControlAssociatesAction"
+        name="ControlAssociatesForm" input="/WEB-INF/jsp/Superuser/ControlAssociates.jsp"/>
+        
+        
+        <!-- contacts -->
+        <action path="/CreateContacts" type="edu.uga.ovpr.aam.contacts.CreateContactsAction"
+        name="CreateContactsForm" input="/WEB-INF/jsp/Contacts/CreateContacts.jsp"/>
+        
+        <action path="/NewContact" type="edu.uga.ovpr.aam.contacts.NewContactAction"
+        name="NewContactForm" input="/WEB-INF/jsp/Contacts/NewContact.jsp"/>
+        
+        <action path="/ManageContacts" type="edu.uga.ovpr.aam.contacts.ManageContactsAction"
+        name="ManageContactsForm" input="/WEB-INF/jsp/Contacts/ManageContacts.jsp"/>
+        
+        <action path="/EditContact" type="edu.uga.ovpr.aam.contacts.EditContactAction"
+        name="EditContactForm" input="/WEB-INF/jsp/Contacts/EditContact.jsp"/>
+        
+        <!-- control affiliate active -->
+        <action path="/ControlAffActive" type="edu.uga.ovpr.aam.superuser.ControlAffActiveAction"
+        name="ControlAffActiveForm" input="/WEB-INF/jsp/Superuser/ControlAffActive.jsp"/>
+        
+        
+        <action path="/ControlAssociateActive" type="edu.uga.ovpr.aam.superuser.ControlAssociateActiveAction"
+        name="ControlAssociateActiveForm" input="/WEB-INF/jsp/Superuser/ControlAssociateActive.jsp"/>
+        
+        <action path="/ControlManagers" type="edu.uga.ovpr.aam.superuser.ControlManagersAction"
+        name="ControlManagersForm" input="/WEB-INF/jsp/Superuser/ControlManagers.jsp"/>
+        
+        <action path="/ControlAssociateManagers" type="edu.uga.ovpr.aam.superuser.ControlAssociateManagersAction"
+        name="ControlAssociateManagersForm" input="/WEB-INF/jsp/Superuser/ControlAssociateManagers.jsp"/>
+        
+        <action path="/ControlContactManagers" type="edu.uga.ovpr.aam.contacts.ControlContactManagersAction"
+        name="ControlContactManagersForm" input="/WEB-INF/jsp/Contacts/ControlContactManagers.jsp"/>
+        
+        <action path="/ControlManActive" type="edu.uga.ovpr.aam.superuser.ControlManActiveAction"
+        name="ControlManActiveForm" input="/WEB-INF/jsp/Superuser/ControlManActive.jsp"/>
+        
+        <action path="/ControlAssociateManActive" type="edu.uga.ovpr.aam.superuser.ControlAssociateManActiveAction"
+        name="ControlAssociateManActiveForm" input="/WEB-INF/jsp/Superuser/ControlAssociateManActive.jsp"/>
+        
+        <action path="/ControlContactManagerActive" type="edu.uga.ovpr.aam.contacts.ControlContactManagerActiveAction"
+        name="ControlContactManagerActiveForm" input="/WEB-INF/jsp/Contacts/ControlContactManagerActive.jsp"/>
+        
+        <action path="/ControlNewMan" type="edu.uga.ovpr.aam.superuser.ControlNewManAction"
+        name="ControlNewManForm" input="/WEB-INF/jsp/Superuser/ControlNewMan.jsp"/>
+        
+        <action path="/ControlNewAssociateMan" type="edu.uga.ovpr.aam.superuser.ControlNewAssociateManAction"
+        name="ControlNewAssociateManForm" input="/WEB-INF/jsp/Superuser/ControlNewAssociateMan.jsp"/>
+        
+        <action path="/ControlNewContactManager" type="edu.uga.ovpr.aam.contacts.ControlNewContactManagerAction"
+        name="ControlNewContactManagerForm" input="/WEB-INF/jsp/Contacts/ControlNewContactManager.jsp"/>
+        
+        <action path="/ControlManAddProxy" type="edu.uga.ovpr.aam.superuser.ControlManAddProxyAction"
+        name="ControlManAddProxyForm" input="/WEB-INF/jsp/Superuser/ControlManAddProxy.jsp"/>
+        
+        <action path="/ControlProxies" type="edu.uga.ovpr.aam.superuser.ControlProxiesAction"
+        name="ControlProxiesForm" input="/WEB-INF/jsp/Superuser/ControlProxies.jsp"/>
+        
+        <action path="/ControlPurposes" type="edu.uga.ovpr.aam.superuser.ControlPurposesAction"
+        name="ControlPurposesForm" input="/WEB-INF/jsp/Superuser/ControlPurposes.jsp"/>
+        
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="edu.uga.ovpr.aam.keys.ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

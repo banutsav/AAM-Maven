@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!DOCTYPE form-validation PUBLIC
+"-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+"http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<form-validation>
+
+<!--
+     This is a minimal Validator form file with a couple of examples.
+-->
+
+    <global>
+
+        <!-- An example global constant
+        <constant>
+            <constant-name>postalCode</constant-name>
+            <constant-value>^\d{5}\d*$</constant-value>
+        </constant>
+        end example-->
+
+    </global>
+
+    <formset>
+
+        <!-- An example form -->
+        <form name="logonForm">
+            <field
+                property="username"
+                depends="required">
+                <arg key="logonForm.username"/>
+            </field>
+            <field
+                property="password"
+                depends="required,mask">
+                <arg key="logonForm.password"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9a-zA-Z]*$</var-value>
+                </var>
+            </field>
+        </form>
+
+    </formset>
+
+    <!-- An example formset for another locale -->
+    <formset language="fr">
+
+        <constant>
+            <constant-name>postalCode</constant-name>
+            <constant-value>^[0-9a-zA-Z]*$</constant-value>
+        </constant>
+
+        <!-- An example form -->
+        <form name="logonForm">
+            <field
+                property="username"
+                depends="required">
+                <arg key="logonForm.username"/>
+            </field>
+            <field
+                property="password"
+                depends="required,mask">
+                <arg key="logonForm.password"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9a-zA-Z]*$</var-value>
+                </var>
+            </field>
+        </form>
+    </formset>
+    
+    <!-- This section prevents the unnecessary tomcat warning:
+            WARNING: Form 'LoginForm' not found for locale 'en_US'
+        from comming up in tomcat's catalina.out file -->
+    <formset>
+        <form name="LoginForm" />
+    </formset>
+    <formset>
+        <form name="HomeForm" />
+    </formset>
+    <formset>
+        <form name="AffiliateOptionForm" />
+    </formset>
+    <formset>
+        <form name="AffiliateApplicationForm" />
+    </formset>
+    <formset>
+        <form name="UpgradeProvisionalAffiliateForm" />
+    </formset>
+    <formset>
+        <form name="AffiliateWithDefinedEmailForm" />
+    </formset>
+    <formset>
+        <form name="ManageUsersForm" />
+    </formset>
+    <formset>
+        <form name="ManAffReqForm" />
+    </formset>
+    <formset>
+        <form name="NewAffReqForm" />
+    </formset>
+    <formset>
+        <form name="ManPurposeForm" />
+    </formset>
+    <formset>
+        <form name="NewPurposeForm" />
+    </formset>
+    <formset>
+        <form name="UpdatePurposeForm" />
+    </formset>
+    <formset>
+        <form name="ManCreateNewAffForm" />
+    </formset>
+    <formset>
+        <form name="ViewManCurrAffForm" />
+    </formset>
+    <formset>
+        <form name="DefineProxyManagerForm" />
+    </formset>
+    <formset>
+        <form name="AddAffManagerForm" />
+    </formset>
+    <formset>
+        <form name="ManAffForm" />
+    </formset>
+    <formset>
+        <form name="ManAffManagerForm" />
+    </formset>
+    <formset>
+        <form name="FindAffForm" />
+    </formset>
+    <formset>
+        <form name="NewAffReqFindForm" />
+    </formset>
+    <formset>
+        <form name="AddAffPurposeReqForm" />
+    </formset>
+
+</form-validation>

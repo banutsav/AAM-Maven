@@ -1,0 +1,153 @@
+/* 
+    Document   : template
+    Created on : Dec 3, 2012, 2:05:05 PM
+    Author     : submyers
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+    margin: 0px;
+}
+
+/* CONTAINER . . . . . . . . . . . . . . . */
+#container	{
+    margin: 5px auto;
+    background: #F0F0F0;
+    padding: 25px;
+    min-height: 450px;
+    -moz-box-shadow: 1px 1px 10px #555;
+    -webkit-box-shadow: 1px 1px 10px #555;
+    -box-shadow: 1px 1px 10px #555;
+    margin: 0px 30px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.row_template:before { 
+    content: " ";
+    display: table;
+    -moz-box-sizing: border-box;
+    height: 0px;
+}
+
+.row_template:after { 
+    content: " ";
+    display: table;
+    clear: both;
+    -moz-box-sizing: border-box;
+    height: 0px;
+}
+
+.header_template {
+    width: 100%;
+}
+
+.header_template .row_template #gear-component_template {
+    float: left;
+    width: 60%;
+}
+
+.header_template .row_template #gear-component_template h1 {
+    /*padding-left: 30px;*/
+    margin-bottom: 0px; 
+    margin-top: 29px;
+}
+
+.header_template .row_template #gear-component_template h1 a {
+    color: #C11B17;
+    text-shadow: 1px 1px #e0e0e0;
+    text-decoration: none;
+    font: bold 30px/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.row_template #gear-logo_template {
+    text-align: left;
+    min-width: 200px;
+}
+
+.row_template #gear-logo_template a {
+    /*margin-right: 30px;*/
+    margin-left: 30px;
+}
+
+.three_template {
+    width: 20%;
+}
+
+.four_template {
+    width: 33.3333%;
+}
+
+.six_template {
+    width: 50%;
+}
+
+.eight_template {
+    width: 77.7777%
+}
+
+.nine_template {
+    width: 80%;
+}
+
+.columns_template {
+    float: left;
+    min-height: 1px;
+    position: relative;
+}
+
+.header_template .row_template a:hover {
+    background-color: transparent;
+}
+
+.header_template .row_template img {
+    border: 0 none;
+}
+
+.header_template .row_template a {
+    color: #577C8D;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Footer . . . . . . . */
+.footer_template  { margin-bottom: 20px; margin-top: 10px;}
+.footer_template #ovpr-logo_template a { margin-left: 40px; background-color: transparent; }
+.footer_template #ovpr-logo_template img { border: 0 none; }
+.footer_template #ovpr-logo_template { width: 48%; }
+.footer_template #ovpr-logo_template .margin_template {margin-right: 30px;}
+.footer_template #ovpr-info_template { font-size: 11px; line-height: 1.4em; text-align: right; min-width: 300px; width: 48%;}
+.footer_template #ovpr-info_template a { color: #777;}
+.footer_template #ovpr-info_template a:hover { background-color: transparent;}
+
+#top-uga_template {
+    background: #000;
+    height: 30px;
+    padding-left: 40px;
+}
+
+#top-uga_template h2 {
+    margin: 0; padding: 0; 
+    text-indent: -999em;
+}
+
+#top-uga_template .row_template a {
+    position: relative;
+    top: -4px;
+}
+
+#top-uga_template .row_template a img {
+    border: none;
+    position: relative;
+    top: 4px;
+}
+
+.login_div_template {
+    text-align: right;
+    margin-right: 50px;
+}

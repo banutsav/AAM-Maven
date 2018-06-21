@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : context.xml
+    Author     : Glenn Owens
+-->
+<Context antiJARLocking="true" path="/AAM">
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" 
+            factory="org.apache.commons.dbcp.BasicDataSourceFactory" 
+            maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/paul" 
+            password="FlLHp4N5sHt?" type="javax.sql.DataSource" 
+            url="jdbc:mysql://mysql1.ovpr.uga.edu:3306/?zeroDateTimeBehavior=convertToNull" 
+            username="paul-user" validationQuery="SELECT 1"/>
+</Context>

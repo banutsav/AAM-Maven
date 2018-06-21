@@ -1,0 +1,22 @@
+<script type="text/javascript">
+var extendSessionUrl = "./ExtendSession.do";
+var timeoutInMillis = 1500000; //25 minutes
+var heartbeat = setInterval("extendSession(extendSessionUrl)", timeoutInMillis);
+function extendSession(extendSessionUrl) {
+    try {
+        var xmlHttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlHttp = new XMLHttpRequest();
+        } else {// code for IE6, IE5
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if (!xmlHttp) {
+            alert("Error creating XmlHttp object.");
+            throw("Error creating XmlHttp object.");
+        }
+        xmlHttp.open("GET", extendSessionUrl, true);
+        xmlHttp.send();
+    } catch (e) {}
+    return true;
+}
+</script>
